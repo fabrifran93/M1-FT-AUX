@@ -26,7 +26,22 @@ return newArray
 function numeroEnComun(array1, array2) {
     // Entre los dos array's que recibe la funcion por parametro
     // Buscar y retornar el valor en comun entre ellos
-   
+    let nuevoNumero
+    
+    for (let i = 0; i<array1.length; i++){
+       for (let j= 0; j<array2.length; j++){
+       if(array1[i]===array2[j]){       
+        nuevoNumero = array1[i]
+       } else {
+           if(array1[i]<array2[j]){
+               nuevoNumero = array1[i]
+           } else {
+             nuevoNumero = array2[j]
+           }
+       }   
+       }
+   }
+   return nuevoNumero
 };
 
 
@@ -36,7 +51,18 @@ function sumaDeArrays(array) {
     // Tienen que devolver UN SOLO array que solo contenga elementos de tipo number
     // Sumando los elementos de cada array que contenga dos elementos, y devolviendo la suma del mismo
     // OJO: Si el elemento dentro del array que ingresa por prop, ya es de tipo number, deben devolverlo como tal dentro del array que retornan.
-   
+   let nuevoArray = [];
+   for (let i=0; i<array;i++){
+       if(typeof array[i] === "object"){
+         let aux = 0;
+         array[i].array.forEach(e => {
+             aux = aux + e
+         }); nuevoArray.push(aux);
+       } else {
+       nuevoArray.push(array[i])
+    }
+   }
+ return nuevoArray
 };
 
 
@@ -44,7 +70,17 @@ function mismoValorMismosElementos(numero, divisor) {
     // Tiene que devolver un array con la misma cantidad de elementos que el valor del divisor
     // Todos los elementos deben tener el mismo valor
     // OJO: Si el resultado de la division no es un entero, deben devolver false
-
+    let arr = [];
+    let i = 0;
+    while(i<(divisor)){
+        if(numero%divisor !==0){
+            return false
+        } else{
+            i++
+            arr.push(numero/divisor)
+        }
+    }
+    return arr
 };
 
 
@@ -52,7 +88,15 @@ function elementoMenorYMayor(array) {
     // El Array recibido por props es un array que contienen numeros
     // Tenes que retornar un array
     // Solamente con el elemento menor y mayor del array recibido
+    let newArray = [];
     
+    for(let i=0; i<array.length-1;i++){
+       let min = Math.min(array[i])
+       let max = Math.max(array[i])
+        newArray.push(min)
+        newArray.push(max)
+    }
+    return newArray
 };
 
 
