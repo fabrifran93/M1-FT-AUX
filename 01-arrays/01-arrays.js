@@ -67,7 +67,7 @@ function mismoValorMismosElementos(numero, divisor) {
     // OJO: Si el resultado de la division no es un entero, deben devolver false
     let arr = [];
     let i = 0;
-    while(i<(divisor)){
+    while(i<divisor){
         if(numero%divisor !==0){
             return false
         } else{
