@@ -70,8 +70,10 @@ function crearClaseLibro() {
       // }
       // let array2 = new Set(array)
       // return array2.size
+
       let rta = new Set (this.getTraducciones())
       return rta.size
+
     }
   }
 
@@ -104,5 +106,6 @@ let arr3 = []
   }
   return arr3
 };
+
 
 module.exports = { crearClaseLibro, printStaff };

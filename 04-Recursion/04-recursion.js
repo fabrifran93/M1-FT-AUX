@@ -4,6 +4,12 @@
 
 const producto = function (array) {
   //escribe aqui tu codigo
+  if(array.length===0){
+    return true
+  } else {
+    return array.shift() * producto(array)
+  }
+  
 
 };
 
@@ -27,6 +33,16 @@ const producto = function (array) {
 
 const isThere = function (obj, value){
   //escribe aqui tu codigo 
-
+  for(const key in obj){
+    if(Object.values(obj).includes(value)){
+      return true
+    }else{
+      for(const key in obj){
+        if(typeof obj[key] ==='object'){
+          return isThere(obj[key],value)
+        }  else return false
+      }
+    }
+   }
 };
 module.exports = { producto, isThere };
