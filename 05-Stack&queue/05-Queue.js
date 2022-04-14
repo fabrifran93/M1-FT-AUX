@@ -19,10 +19,27 @@ const { Queue } = require("../estructuras")
 
 var controlAcces = function(queue, event){
     // Tu código aca:
+    let queueRta = [];
+    let arrAdic = [];
+    // for (const key in queue){
+    //   if(Object.values(queue[key]).includes(event) && queue.age>=18){
+    //     queueRta.unshift(queue[key])
+    //     return queueRta
+    //   }
+    // }
     
-  };
-      
-  
+    for(const key in queue){
+     let arr = queue[key]
+     for(let i=0;i<arr.length;i++){
+        if(arr[i].age>=18 && arr[i].ticket.event === event && !arrAdic.includes(arr[i].ticket.number)){
+         arrAdic.push(arr[i].ticket.number);
+         queueRta.push(arr[i].fullname)
+         }
+        }
+      return queueRta
+     } 
+ }
+
 
   module.exports = {
     controlAcces,
