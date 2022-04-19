@@ -34,6 +34,7 @@ var controlAcces = function(queue, event){
         if(arr[i].age>=18 && arr[i].ticket.event === event && !arrAdic.includes(arr[i].ticket.number)){
          arrAdic.push(arr[i].ticket.number);
          queueRta.push(arr[i].fullname)
+         console.log(queueRta)
          }
         }
       return queueRta

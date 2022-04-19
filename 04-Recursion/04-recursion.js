@@ -6,12 +6,12 @@ const producto = function (array) {
   //escribe aqui tu codigo
   if(array.length===0){
     return true
-  } else {
-    return array.shift() * producto(array)
-  }
+  } return array.shift() * producto(array)
+
+  };
   
 
-};
+
 
 // Dado un objeto con objetos anidados utilizar la recursión para crear una función
 // que devuelva true o false dependiendo si el objeto tiene o no el valor pasado por parametro
@@ -36,13 +36,13 @@ const isThere = function (obj, value){
   for(const key in obj){
     if(Object.values(obj).includes(value)){
       return true
-    }else{
-      for(const key in obj){
+    }else{      
         if(typeof obj[key] ==='object'){
           return isThere(obj[key],value)
-        }  else return false
-      }
+        }  else return false      
     }
    }
 };
+
+
 module.exports = { producto, isThere };

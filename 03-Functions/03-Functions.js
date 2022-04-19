@@ -6,6 +6,7 @@ function timeConversion(time){
 // if (time.length > 10) return false
 // let hora = time[0] + time[1]
 // slice()
+
 let hora = Number(time.slice(0,2))
 if (hora>12 || Number(time.slice(3,5))>=60 || Number(time.slice(6,8))>=60 || time == "" || time.length!==10) {return false}
 if (time.slice(8,10) === 'AM' && hora===12){
